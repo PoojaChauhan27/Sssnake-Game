@@ -1,14 +1,16 @@
-import javax.swing.JFrame;
-
+import javax.swing.*;
 public class GameFrame extends JFrame {
+    public static GamePanel gamePanel;
+    public static ScorePanel scorePanel;
+
     GameFrame(){
-        GamePanel panel = new GamePanel();
-        this.add(panel);                          // shortcut -- this.add(new GamePanel());
-        this.setTitle("Snake");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.pack();
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
+         gamePanel = new GamePanel();
+         {
+             this.add(gamePanel);                         // shortcut -- this.add(new GamePanel());
+         }
+         scorePanel = new ScorePanel();
+         {
+             this.add(scorePanel);
+         }
     }
 }
